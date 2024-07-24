@@ -1,7 +1,7 @@
 FROM python:3.12.3
 
 # Copy the requirements.txt file into tmp directory
-COPY requirements.txt /tmp/requirements.txt
+COPY requirements-frontend.txt /tmp/requirements.txt
 
 # Upgrade pip and install requirements.txt
 RUN python -m pip install --no-cache-dir --upgrade pip &&\

@@ -11,7 +11,7 @@ import uvicorn
 # create an instance of FASTAPI
 app = FastAPI(
         title="Sepsis Prediction API",
-        description= "Predicts whether a patient at the ICU has the Sepssis disease or not",
+        description= "Predicts whether a patient at the ICU has the Sepsis disease or not",
         contact={
             "name": "API Support",
             "email": "florencelaryea88@gmail.com"
@@ -21,7 +21,7 @@ app = FastAPI(
 
 # load model components
 def load_ml_components():
-    with open("../Model_compartments/sepsis_model_components.joblib","rb") as file:
+    with open("./Model_compartments/sepsis_model_components.joblib","rb") as file:
         model_components = joblib.load(file) 
     return model_components
 
