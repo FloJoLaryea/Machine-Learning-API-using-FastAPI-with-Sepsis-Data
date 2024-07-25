@@ -10,12 +10,12 @@ st.set_page_config(
 st.title("Sepsis Classifier Application 🤖")
 
 # # load the api endpoints
-gradient_boost_endpoint = "http://127.0.0.1:8000/predict_sepsis/gradient_boost"
-random_forest_endpoint = "http://127.0.0.1:8000/predict_sepsis/random_forest_classifier"
+#gradient_boost_endpoint = "http://127.0.0.1:8000/predict_sepsis/gradient_boost"
+#random_forest_endpoint = "http://127.0.0.1:8000/predict_sepsis/random_forest_classifier"
 
 # endpoints from Docker
-#gradient_boost_endpoint = "'http://127.0.0.1:8000/predict_sepsis/gradient_boost"
-#log_regression_endpoint = "http://api:8000/predict_sepsis/log_regression"
+gradient_boost_endpoint = "'http://api:8000/predict_sepsis/gradient_boost/"
+random_forest_endpoint = "http://api:8000/predict_sepsis/random_forest_classifier/"
 
 
 # select between the two endpoints of the ml_model
@@ -59,7 +59,7 @@ def display_forms():
 # define function to make predictions
 def make_prediction():
     input_features = {key: st.session_state[key] for key in input_keys}
-    if st.session_state["model_select"] == "Logistic Regression":
+    if st.session_state["model_select"] == "Random Forest Classifier":
         # send api resopnse to the gradient boost api
         random_forest_response =requests.post(random_forest_endpoint,json=input_features)
         if random_forest_response.status_code == 200:

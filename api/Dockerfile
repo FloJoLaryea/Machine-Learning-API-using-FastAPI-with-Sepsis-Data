@@ -14,7 +14,7 @@ COPY . /app
 WORKDIR /app
 
 # Expose Port
-EXPOSE 80
+EXPOSE 8000
 
 # Run the appliaction
 CMD [ "uvicorn", "api:app", "--host", "0.0.0.0" ,"--port", "8000"]
