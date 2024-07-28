@@ -87,3 +87,107 @@ In the healthcare industry the early detection and management of critical medica
     <td>Positive: if a patient in ICU will develop sepsis, and Negative: otherwise</td>
   </tr>
 </table>
+
+
+### Deliverables 
+1. A jupyter notebook for training a classification model
+2. A classification Model
+3. An API App built with FastApi
+4. A Streamlit app that make calls to the build and hosted API
+5. A Dockerfile for easy deployment 
+
+
+
+### Installation 
+Clone the repository to your local machine:
+
+
+        git clone https://github.com/FloJoLaryea/Machine-Learning-API-using-FastAPI-with-Sepsis-Data
+
+Navigate to the project directory:
+
+        cd Machine-Learning-API-using-FastAPI-with-Sepsis-Data
+Create a new virtual environment and activate the virtual:
+
+- Windows:
+
+        python -m venv venv; venv\Scripts\activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt  
+
+- Linux & MacOs:
+
+        python3 -m venv venv; source venv/bin/activate; python -m pip install -q --upgrade pip; python -m pip install -qr requirements.txt
+
+*API*
+
+To execute the API, follow these steps:
+After all requirement have been install
+
+At the root of your repository in your terminal
+`root :: Machine-Learning-API-using-FastAPI-with-Sepsis-Data> ...`
+run the command:
+
+
+            uvicorn api:app --reload 
+
+OR
+
+            python api/api.py
+
+
+
+
+*Streamlit App*
+
+To execute the App, follow these steps:
+After all requirement have been install
+
+At the root of your repository in your terminal
+`root :: Machine-Learning-API-using-FastAPI-with-Sepsis-Data> ...`
+run the command:
+
+
+            streamlit run main.py
+
+
+
+<img src="https://github.com/FloJoLaryea/Machine-Learning-API-using-FastAPI-with-Sepsis-Data/blob/main/gif.gif?raw=true" width="600" height="400" />
+
+
+*API Endpoints* 
+
+1. **/**: This Endpoint display a welcome message-” Welcome to the Sepsis API...”.
+2. **/Get Status**: Checks status of the API
+3. **/predict_sepsis/random_forest_classifier**: Recieve inputs and returns a single prediction using random forest model.
+4. **/predict_sepsis/gradient_boost**: Recieve inputs and returns a single prediction using gradient boost model
+
+
+## Running The Docker Images from Dockerhub
+
+To run the Docker images on your local machine, follow these steps.
+
+### Prerequisites
+
+In order to run this project, you need:
+
+- Python installed on your machine
+
+### Steps
+
+1. **Install Docker**
+
+   If you haven't already installed Docker, you can download and install it from the [official Docker website](https://www.docker.com/get-started). Follow the installation instructions specific to your operating system.
+
+2. **Pull the Docker Images**
+
+   Open your terminal or command prompt and pull the required Docker images from Dockerhub using the following commands:
+
+   ``` sh
+   docker pull flojo24/sepsis-predict-api:v1.0     
+   docker pull flojo24/sepsis-predict-client:v1.0 
+   ```
+
+  ``` sh
+   docker run -d --name mycontainer -p 8000:8000 flojo24/sepsis-predict-api:v1.0
+   docker run -d --name mycontainer -p 8000:8000 flojo24/sepsis-predict-client:v1.0
+   ```
+
