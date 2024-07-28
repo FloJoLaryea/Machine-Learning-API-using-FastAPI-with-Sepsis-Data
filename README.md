@@ -191,3 +191,19 @@ In order to run this project, you need:
    docker run -d --name mycontainer -p 8000:8000 flojo24/sepsis-predict-client:v1.0
    ```
 
+
+## Authors
+- Florence Josephina Laryea
+- florencelaryea@gmail.com
+
+- [Link to my article on Medium](https://medium.com/@florencelaryea88/sepsis-prediction-with-fastapi-e088c8934d78)
+
+
+
+
+
+## Acknowledgements
+
+Much of our sincere gratitude goes to our instructors Racheal Appiah-Kubi for unwavering support, and invaluable mentorship throughout the course of this project.
+
+Her expertise, dedication, and commitment to our learning journey have been instrumental in shaping our understanding and skills in data analysis
